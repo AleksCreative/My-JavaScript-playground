@@ -1,5 +1,5 @@
 // Declaring variables
-const button = document.getElementById("enter");
+let button = document.getElementById("enter");
 const input = document.getElementById("userinput");
 const ul = document.querySelector("ul");
 
@@ -11,15 +11,20 @@ function inputLength() {
 // Function that creates the list elements that contains text based on the input.value
 function createListElement() {
 	let li = document.createElement("li");
+	let tickBox = document.createElement("input");
+	tickBox.setAttribute("type", "checkbox");
+	li.appendChild(tickBox);
 	li.appendChild(document.createTextNode(input.value));
 	ul.appendChild(li);
 	input.value = "";
 }
 
+
 // Function that calls the createListElement() function after user clicks the button
 function addListAfterClick() {
 	if (inputLength() > 0) {
 		createListElement();
+		createTickBox();
 	}
 }
 
