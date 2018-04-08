@@ -11,14 +11,19 @@ function inputLength() {
 // Function that creates the list elements that contains text based on the input.value
 function createListElement() {
 	let li = document.createElement("li");
+	li.setAttribute("class", "list-item");
 	let tickBox = document.createElement("input");
 	tickBox.setAttribute("type", "checkbox");
+	tickBox.setAttribute("class", "tick-box")
+	let clearButton = document.createElement("button");
+	clearButton.setAttribute("class", "clear-button");
+	clearButton.textContent = "Remove item";
 	li.appendChild(tickBox);
 	li.appendChild(document.createTextNode(input.value));
+	li.appendChild(clearButton);
 	ul.appendChild(li);
 	input.value = "";
 }
-
 
 // Function that calls the createListElement() function after user clicks the button
 function addListAfterClick() {
