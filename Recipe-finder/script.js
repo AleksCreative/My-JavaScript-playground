@@ -1,6 +1,6 @@
 // Declaring variables
 let button = document.getElementById("enter");
-const input = document.getElementById("userinput");
+let input = document.getElementById("userinput");
 const ul = document.getElementById("shop-list");
 
 // Function that determines the value of the text in the input box
@@ -12,16 +12,22 @@ function inputLength() {
 function createListElement() {
 	let li = document.createElement("li");
 	li.setAttribute("class", "list-item");
+
 	let tickBox = document.createElement("input");
 	tickBox.setAttribute("type", "checkbox");
 	tickBox.setAttribute("class", "tick-box")
+
 	let clearButton = document.createElement("button");
 	clearButton.setAttribute("class", "clear-button");
 	clearButton.textContent = "Remove item";
+
 	li.appendChild(tickBox);
 	li.appendChild(document.createTextNode(input.value));
 	li.appendChild(clearButton);
+
 	ul.appendChild(li);
+	ul.insertBefore(li, ul.childNodes[0]);
+
 	input.value = "";
 }
 
