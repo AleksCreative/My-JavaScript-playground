@@ -1,7 +1,7 @@
 // Declaring variables
 let button = document.getElementById("enter");
 const input = document.getElementById("userinput");
-const ul = document.querySelector("ul");
+const ul = document.getElementById("shop-list");
 
 // Function that determines the value of the text in the input box
 function inputLength() {
@@ -24,7 +24,6 @@ function createListElement() {
 function addListAfterClick() {
 	if (inputLength() > 0) {
 		createListElement();
-		createTickBox();
 	}
 }
 
